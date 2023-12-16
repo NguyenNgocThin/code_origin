@@ -1,0 +1,27 @@
+/* Header.css */
+
+.header {
+    background-color: rgb(74, 75, 75);
+    padding: 20px;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: right;
+  }
+  
+  .nav-list li {
+    margin-right: 30px;
+    padding: 5px;
+  }
+  
+  .nav-list li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  
+  .nav-list li a:hover {
+    color: lightgray;
+  }

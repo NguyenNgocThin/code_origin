@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hiển thị thông tin của marker</title>
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hiển thị thông tin của marker</h1>
+  <div id="map"></div>
+
+  <script>
+    // Khởi tạo bản đồ
+    function initMap() {
+      // Tạo đối tượng bản đồ
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 40.7128, lng: -74.0060}, // Tọa độ trung tâm bản đồ
+        zoom: 12 // Mức độ phóng to
+      });
+
+      // Tạo đối tượng InfoWindow
+      var infoWindow = new google.maps.InfoWindow();
+
+      // Tạo marker
+      var marker = new google.maps.Marker({
+        position: {lat: 40.7128, lng: -74.0060}, // Tọa độ marker
+        map: map,
+        title: 'New York City' // Tiêu đề marker
+      });
+
+      // Xử lý sự kiện click vào marker
+      marker.addListener('click', function() {
+        // Hiển thị thông tin trong InfoWindow
+        infoWindow.setContent('Đây là New York City!');
+        infoWindow.open(map, marker);
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLug3bGmnZTHwE4CVBpTnOtIwQeJgBMew&callback=initMap" async defer></script>
+</body>
+</html>
